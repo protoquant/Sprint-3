@@ -29,7 +29,37 @@ import pandas as pd
 import requests
 import time
 
-from client import FtxClient
+start = int(datetime(2020, 5, 23,0,0,0).timestamp())
+end = int(datetime(2022, 5, 23,0,0,0).timestamp())
+stamps = [start]
+
+while stamps[-1] < end:
+    stamp_delta = datetime.fromtimestamp(start) + timedelta(hours=4900)
+    stamp = time.mktime(stamp_delta.timetuple())
+    stamps.append(int(stamp))
+    start = stamp
+
+assets = ['BTC', 'ETH']
+
+quote_currency = 'USD'
+resolution=3600
+
+def get_data(base_currency, quote_currency, stamps, resolution):
+    no_of_stamps = len(stamps)
+    all_data = {}
+    for i in range(len(stamps)):
+        if no_of_stamps < i:
+            url = f"https://ftx.us/api/markets/{base_currency}/{quote_currency}/candles?resolution={resolution}&start_time={stamps[i]}&end_time={stamps[i+1]}&limit=5000"
+        else:
+            url = f"https://ftx.us/api/markets/{base_currency}/{quote_currency}/candles?resolution={resolution}&start_time={stamps[i]}&end_time={end}&limit=5000"
+        res = requests.get(url).json()
+        if len(all_data) == 0:
+            all_data = res
+        else:
+            all_data['result'].extend(res['result'])
+    return all_data
+
+data = get_data(base_currency, quote_currency, sorted(stamps), resolution)
 
 def pad_name(pad_last, df):
     old_col_names = list(df.columns)
@@ -39,29 +69,13 @@ def pad_name(pad_last, df):
     df.rename(dict(zip(old_col_names, new_col_names)), axis=1, inplace=True) 
     return df
 
-assets = ['BTC', 'ETH', 'BNB', 'BCH', 'AVAX', 'SOL', 'LTC']
+def collect_data(asset, quote_currency, stamps, resolution):
 
-def collect_data(asset):
-    endpoint_url = 'https://ftx.com/api/markets'
-    base_currency = asset
-    quote_currency = 'USD'
-
-    # Specify the base and quote currencies to get single market data
-    request_url = f'{endpoint_url}/{base_currency}/{quote_currency}'
-
-    # 1 day = 60 * 60 * 24 seconds
-    daily=str(60*60*24)
-
-    # Start date = 2022-04-01
-    start = datetime(2020, 1, 1).timestamp()
-
-    # Get the historical market data as JSON
-    historical = requests.get(
-        f'{request_url}/candles?resolution={daily}&start_time={start}'
-    ).json()
+    historical = get_data(asset, quote_currency, stamps, resolution)
 
     # Convert JSON to Pandas DataFrame
     df = pd.DataFrame(historical['result'])
+    df = df.drop_duplicates()
 
     #Convert time to date
     df['date'] = pd.to_datetime(
@@ -86,7 +100,7 @@ def collect_data(asset):
     col_name_change_2H = pad_name("_ftx_2H", asset_2H)
     col_name_change_4H = pad_name("_ftx_4H", asset_4H)
     col_name_change_8H = pad_name("_ftx_8H", asset_8H)
-    col_name_change_24H = pad_name("_ftx_24H", asset_24H)
+    # col_name_change_24H = pad_name("_ftx_24H", asset_24H)
     col_name_change_48H = pad_name("_ftx_48H", asset_48H)
     col_name_change_72H = pad_name("_ftx_72H", asset_72H)
 
@@ -94,11 +108,12 @@ def collect_data(asset):
     col_name_change_2H.to_csv(f'{asset}_ftx_2H.csv')
     col_name_change_4H.to_csv(f'{asset}_ftx_4H.csv')
     col_name_change_8H.to_csv(f'{asset}_ftx_8H.csv')
-    col_name_change_24H.to_csv(f'{asset}_ftx_24H.csv')
+    # col_name_change_24H.to_csv(f'{asset}_ftx_24H.csv')
     col_name_change_48H.to_csv(f'{asset}_ftx_48H.csv')
     col_name_change_72H.to_csv(f'{asset}_ftx_72H.csv')
     
     return 1
 
 for asset in assets:
-    collect_data(asset)
+    
+    collect_data(asset, quote_currency, stamps, resolution)
