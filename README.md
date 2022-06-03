@@ -12,3 +12,5 @@ Two plus hours to get an output.
 For deribit I have gotten values for btc, ETH, SOL
 
 Thank you for your patience. Doing this project has made me a better developer.
+
+Although I am not still done. At least 75℅ of the data have been collected. The code are correct.
