@@ -15,4 +15,4 @@ Thank you for your patience.
 
 Although I am not still done. At least 85℅ of the data have been collected. The code are correct.
 
-I created an All Data folder so you would see all the data i collected for various assets. I also created a sub-folder of Data that does not come out properly from the website
+I created an All Data folder so you would see all the data i collected for various assets. I also created a sub-folder of Data that does not come out properly from the website. The sub-folder are there because the API started collecting data for those coin from 2022
