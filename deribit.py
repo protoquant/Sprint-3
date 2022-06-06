@@ -1,24 +1,23 @@
 
 
 !pip install websockets
-
+from datetime import datetime
 !python index.py
-
 import pandas as pd
 
 eth = pd.read_csv('eth_2020_master.csv')
 
-eth.head()
+btc.timestamp = pd.to_datetime(btc.timestamp)
 
-eth.shape
-
-from datetime import datetime
-
-eth['timestamp'] = eth['timestamp'].apply(lambda x: datetime.strptime(x, '%Y-%m-%d %H:%M:%S'))
-
-eth.head()
-
-eth['status'].unique
+def pad_name(pad_last, df):
+    old_col_names = list(df.columns)
+    new_col_names = []
+    for col in old_col_names:
+      
+        new_col_names.append(col+pad_last)
+    df.rename(dict(zip(old_col_names, new_col_names)), axis=1, inplace=True) 
+    return df
+pad_name("_deribit_1H_BTC", eth)
 
 eth_1H = eth.set_index('timestamp').resample('1H').last()
 eth_2H = eth.set_index('timestamp').resample('2H').last()
@@ -36,7 +35,6 @@ eth_24H.to_csv('eth_24H.csv')
 eth_48H.to_csv('eth_48H.csv')
 eth_72H.to_csv('eth_72H.csv')
 
-eth.shape
 
 
 
