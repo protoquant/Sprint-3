@@ -65,12 +65,13 @@ def get_data(date1, instrument,tf=1 ):
       
       #loop the timestamp and turn it to datetime
       for _ in range(n_days):
-            d2 = d1 + dt.timedelta(days=1)
+            d2 = d1 + dt.timedelta(hours=1)
 
             t1 = dt.datetime.timestamp(d1)*1000
             t2 = dt.datetime.timestamp(d2)*1000
 
             json_resp = retrieve_historic_data(t1, t2, instrument, tf)
+        
 
             #Create a temporary df and append it to the master df
             temp_df = json_to_dataframe(json_resp)
@@ -94,18 +95,13 @@ def get_data(date1, instrument,tf=1 ):
 
 if __name__ == '__main__':
     #change this to two years prior to the day you are using this script
-    start = dt.datetime(2020, 1, 1, 0, 0)
+    start = dt.datetime(2020, 11, 26, 0, 0)
     instrument = "BTC-PERPETUAL"
-    tf = "1"
+    tf = "120"
 
     df_master = get_data(start, instrument, tf)
     
     # store it in csv format
-    df_master.to_csv('eth_2020_master.csv')
+    df_master.to_csv('btc_2H_master.csv')
 
 
-
-
-
-
-     
