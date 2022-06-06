@@ -14,3 +14,5 @@ For deribit I have gotten values for btc, ETH, SOL
 Thank you for your patience. 
 
 Although I am not still done. At least 85℅ of the data have been collected. The code are correct.
+
+I created an All Data folder so you would see all the data i collected for various assets. I also created a sub-folder of Data that does not come out properly from the website
