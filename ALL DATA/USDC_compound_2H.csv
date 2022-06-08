@@ -1,4 +1,4 @@
-,timestamp_compound_2H,block_number_compound_2H,exchange_rates_compound_2H,borrow_rates_compound_2H,supply_rates_compound_2H,total_borrows_history_compound_2H,total_supply_history_compound_2H,prices_usd_compound_2H
+,timestamp,block_number_compound_2H,exchange_rates_compound_2H,borrow_rates_compound_2H,supply_rates_compound_2H,total_borrows_history_compound_2H,total_supply_history_compound_2H,prices_usd_compound_2H
 0,2020-11-26 00:00:00,11251549,0.021244522279996916,0.04003537100829704,0.029712578931555756,276468597.40619722,16575001247.45073213,0.000000
 1,2020-11-26 01:00:03,11251823,0.021244611695439175,0.0400259979015901,0.029698739026277874,276627400.18894819,16588265959.62895037,1.000000
 2,2020-11-26 02:00:00,11252097,0.021244689484273115,0.04018600816581557,0.029935531850196626,277948637.79360032,16602346338.10137706,0.000000
