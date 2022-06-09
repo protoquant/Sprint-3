@@ -1,4 +1,4 @@
-,timestamp,open_ETH_ftx_1H,high_ETH_ftx_1H,low_ETH_ftx_1H,close_ETH_ftx_1H,volume_ETH_ftx_1H,price
+,timestamp,open_ETH_ftx_1H,high_ETH_ftx_1H,low_ETH_ftx_1H,close,volume_ETH_ftx_1H,price
 0,2020-11-26 07:00:00,531.78,531.81,511.15,514.61,2461.51806,514.61
 1,2020-11-26 08:00:00,514.61,516.15,483.68,497.46,18713.03712,497.46
 2,2020-11-26 09:00:00,497.3,507.3,494.13,502.34,995.58,502.34

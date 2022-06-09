@@ -1,4 +1,4 @@
-,timestamp,open_LTC_ftx_1H,high_LTC_ftx_1H,low_LTC_ftx_1H,close_LTC_ftx_1H,volume_LTC_ftx_1H,price
+,timestamp,open_LTC_ftx_1H,high_LTC_ftx_1H,low_LTC_ftx_1H,close,volume_LTC_ftx_1H,price
 0,2020-11-26 07:00:00,77.36,77.36,74.33,76.26,14935.8551,76.26
 1,2020-11-26 08:00:00,76.26,76.34,71.745,74.085,77399.2987,74.085
 2,2020-11-26 09:00:00,74.085,75.505,73.585,74.865,14022.25285,74.865

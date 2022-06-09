@@ -1,4 +1,4 @@
-,timestamp,open_BCH_ftx_1H,high_BCH_ftx_1H,low_BCH_ftx_1H,close_BCH_ftx_1H,volume_BCH_ftx_1H,price
+,timestamp,open_BCH_ftx_1H,high_BCH_ftx_1H,low_BCH_ftx_1H,close,volume_BCH_ftx_1H,price
 0,2020-11-26 07:00:00,290.2,290.2,275.325,280.95,12453.63125,280.95
 1,2020-11-26 08:00:00,280.95,283.675,264.75,271.625,17308.071975,271.625
 2,2020-11-26 09:00:00,271.625,279.475,270.775,277.675,7179.787075,277.675

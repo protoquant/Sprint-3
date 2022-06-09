@@ -1,4 +1,4 @@
-,timestamp,Unnamed: 0_deribit_1H_ETH,volume_deribit_1H_ETH,ticks_deribit_1H_ETH,status_deribit_1H_ETH,open_deribit_1H_ETH,low_deribit_1H_ETH,high_deribit_1H_ETH,cost_deribit_1H_ETH,close_deribit_1H_ETH,price
+,timestamp,Unnamed: 0_deribit_1H_ETH,volume_deribit_1H_ETH,ticks_deribit_1H_ETH,status_deribit_1H_ETH,open_deribit_1H_ETH,low_deribit_1H_ETH,high_deribit_1H_ETH,cost_deribit_1H_ETH,close,price
 0,2020-11-26 07:00:00,479,11.77607,1606377540.0,ok,518.05,516.55,518.25,6097.0,516.55,516.55
 1,2020-11-26 08:00:00,539,2187.667855,1606381140.0,ok,500.45,498.65,500.65,1093090.0,499.3,499.3
 2,2020-11-26 09:00:00,599,54.624082,1606384740.0,ok,505.95,505.85,506.0,27638.0,505.85,505.85

@@ -1,4 +1,4 @@
-,Unnamed: 0,timestamp,open_SOL_2020_ftx_1H,high_SOL_2020_ftx_1H,low_SOL_2020_ftx_1H,close_SOL_2020_ftx_1H,volume_SOL_2020_ftx_1H,price
+,Unnamed: 0,timestamp,open_SOL_2020_ftx_1H,high_SOL_2020_ftx_1H,low_SOL_2020_ftx_1H,close,volume_SOL_2020_ftx_1H,price
 0,7,2020-11-26 07:00:00,1.905,1.905,1.8425,1.85,48.1,1.85
 1,8,2020-11-26 08:00:00,1.85,1.85,1.75,1.7625,2616.41,1.7625
 2,9,2020-11-26 09:00:00,1.7625,1.8275,1.755,1.82,0.0,1.82

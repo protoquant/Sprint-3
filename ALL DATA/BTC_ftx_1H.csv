@@ -1,4 +1,4 @@
-,timestamp,open_BTC_ftx_1H,high_BTC_ftx_1H,low_BTC_ftx_1H,close_BTC_ftx_1H,volume_BTC_ftx_1H,price
+,timestamp,open_BTC_ftx_1H,high_BTC_ftx_1H,low_BTC_ftx_1H,close,volume_BTC_ftx_1H,price
 0,2020-11-26 07:00:00,17953.5,17953.5,17486.0,17608.0,65367.89755,17608.0
 1,2020-11-26 08:00:00,17608.0,17608.0,16331.0,16830.0,279481.3423,16830.0
 2,2020-11-26 09:00:00,16830.0,17117.5,16672.5,17048.5,13253.72425,17048.5
